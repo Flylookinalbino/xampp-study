@@ -325,14 +325,14 @@
 5. How to Create JSObject in a .json file
 6. How to call .json file into your script.js using following;
 
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function(){
-    if(this.readyState == 4 && this.status == 200){
-        var respnse = JSON.parse(xhttp.responseText);
-    };
-};
-xhttp.open("GET","File.json", true);
-xhttp.send();
+> var xhttp = new XMLHttpRequest();
+> xhttp.onreadystatechange = function(){
+    > if(this.readyState == 4 && this.status == 200){
+    > var respnse = JSON.parse(xhttp.responseText);
+    > };
+>};
+> xhttp.open("GET","File.json", true);
+> xhttp.send();
 
 ## AJAX Crash Course (Vinilla JavaScript)
 ### https://www.youtube.com/watch?v=82hnvUYY6QA&list=PLillGF-RfqbbnEGy3ROiLWk7JMCuSyQtX&index=12
@@ -582,6 +582,31 @@ xhttp.send();
 
 
 ## PHP
+### https://www.youtube.com/playlist?list=PLillGF-Rfqbap2IB6ZS4BBBcYPagAjpjn
+
+#### PHP Front To Back [Part 1] - Series Introduction
+#### PHP Front To Back [Part 2] - PHP7 & XAMPP Installation
+#### PHP Front To Back [Part 3] - Variables, Constants & Data Types
+#### PHP Front To Back [Part 4] - Arrays
+#### PHP Front To Back [Part 5] - Loops
+#### PHP Front To Back [Part 6] - Function
+#### PHP Front To Back [Part 7] - Conditionals & Comparison
+#### PHP Front To Back [Part 8] - Dates & Timestamps
+#### PHP Front To Back [Part 9] - Include & Require
+#### PHP Front To Back [Part 10] - $_SERVER Superglobal
+#### PHP Front To Back [Part 11] - GET & POST
+#### PHP Front To Back [Part 12] - Common String Functions
+#### PHP Front To Back [Part 13] - Ternary & Shorthand Syntax
+#### PHP Front To Back [Part 14] - Filters & Validation
+#### PHP Front To Back [Part 15] - PHP Contact Form
+#### PHP Front To Back [Part 16] - Sessions Tutorial
+#### PHP Front To Back [Part 17] - Cookies Tutorial
+#### PHP Front To Back [Part 18] - PHP & AJAX
+#### PHP Front To Back [Part 19] - File System Functions
+#### PHP Front To Back [Part 20] - OOP
+#### PHP Front To Back [Part 21] - Fetching Data With MySQL
+#### PHP Front To Back [Part 22] - MySQL Insert, Update & Delete
+
 
 ## Fetch API Introduction
 ###
