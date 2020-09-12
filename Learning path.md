@@ -581,10 +581,49 @@
         > SELECT location, COUNT(location) FROM users WHERE location = 'US' GROUP BY location; 
 
 
+## Fetch API Introduction
+### https://www.youtube.com/watch?v=Oive66jrwBs&list=PLillGF-RfqbbnEGy3ROiLWk7JMCuSyQtX&index=13
+
+## JavaScript EA6 / ES2015 Tutuorials
+###
+
 ## PHP
 ### https://www.youtube.com/playlist?list=PLillGF-Rfqbap2IB6ZS4BBBcYPagAjpjn
 
 #### PHP Front To Back [Part 1] - Series Introduction
+##### What is PHP?
+1. PHP: Hypertext Preprocessor(Recursive Acronym)
+2. Server Side Programming/ Scripting Language
+3. Can be embedded directly within HTML(<?php?>)
+4. Files use a ".php" file extension
+
+##### How Does PHP Work?
+1. Client makes a request
+2. Server runs PHP / extensions
+3. Query database if needed
+4. Load other files if needed
+5. Result is sent back to client
+
+##### What Can PHP Do?
+1. Create dynamic page content
+2. Interact with files on the server
+3. Collect & process forms
+4. Send / receive cookies
+5. Interact with databases
+6. Access control
+7. Encrypt data
+8. Almost anything else
+
+##### What Can You Build With PHP?
+1. Basic Websites
+2. Blog Type Website
+3. Shopping Carts
+4. Social Network
+5. Content Management System
+6. Membership Websites
+7. Search Engines
+8. Bankend APIs
+
 #### PHP Front To Back [Part 2] - PHP7 & XAMPP Installation
 #### PHP Front To Back [Part 3] - Variables, Constants & Data Types
 #### PHP Front To Back [Part 4] - Arrays
@@ -607,12 +646,6 @@
 #### PHP Front To Back [Part 21] - Fetching Data With MySQL
 #### PHP Front To Back [Part 22] - MySQL Insert, Update & Delete
 
-
-## Fetch API Introduction
-###
-
-## JavaScript EA6 / ES2015 Tutuorials
-###
 
 ## Pure JavaScript Type Writer Effect
 ###
