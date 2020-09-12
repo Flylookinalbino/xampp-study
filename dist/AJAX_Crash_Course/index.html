@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="./css/fontawesome.css"> -->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>AJAX Crash Course</title>
+</head>
+<body class=" bg-gray-200 ">
+    <!-- ajax1.js -->
+    <h1 class="text-center text-5xl font-thin">AJAX 1 - Text File</h1>
+    <div class=" grid grid-cols-12 ">
+        <button id='fileEvent' class="col-start-1 sm:col-start-3 md:col-start-4 lg:col-start-5 xl:col-start-5
+                                      col-span-12 sm:col-span-8 md:col-span-6 lg:col-span-4 xl:col-span-4 
+                                      shadow-2xl m-2 p-2 rounded 
+                                      text-white bg-teal-600 justify-items-center"
+                                      >Load File</button>
+    </div>
+    <!-- Data Displayed here -->
+    <script src="./js/ajax1.js"></script>
+
+    <!-- ajax2.js -->
+    <h1 class=" text-center text-5xl font-thin mt-4">AJAX 2 - Local JSON</h1>
+    <div class=" grid grid-cols-12 ">
+        <button id='userBtn' class="col-start-1 sm:col-start-3 md:col-start-4 lg:col-start-5 xl:col-start-5
+                                      col-span-12 sm:col-span-8 md:col-span-6 lg:col-span-4 xl:col-span-4 
+                                      shadow-2xl m-2 p-2 rounded 
+                                      text-white bg-teal-600 justify-items-center"
+                                      >Get User</button>
+    </div>
+    <div class=" grid grid-cols-12">
+        <button id='usersBtn' class="col-start-1 sm:col-start-3 md:col-start-4 lg:col-start-5 xl:col-start-5
+                                      col-span-12 sm:col-span-8 md:col-span-6 lg:col-span-4 xl:col-span-4 
+                                      shadow-2xl m-2 p-2 rounded 
+                                      text-white bg-teal-600 justify-items-center"
+                                      >Get Users</button>
+    </div>
+    <h1 id="user" class=" text-center text-3xl font-thin">User</h1>
+    <!-- User data -->
+    <h1 id="users" class=" text-center text-3xl font-thin">Users</h1>
+    <!-- Users data -->
+    <script src="./js/ajax2.js"></script> 
+
+    <!-- ajax3.js -->
+    <h1 class=" text-center text-5xl font-thin mt-4">AJAX 3 - External API</h1>
+    <div class=" grid grid-cols-12 ">
+        <button id='gitUsersBtn' class="col-start-1 sm:col-start-3 md:col-start-4 lg:col-start-5 xl:col-start-5
+                                      col-span-12 sm:col-span-8 md:col-span-6 lg:col-span-4 xl:col-span-4 
+                                      shadow-2xl m-2 p-2 rounded 
+                                      text-white bg-teal-600 justify-items-center"
+                                      >Load GitHub Users</button>
+    </div>
+    <h1 id="gitUsers" class=" text-center text-3xl font-thin">GitHub Users</h1>
+    <!-- User data -->
+    <script src="./js/ajax3.js"></script>
+
+    <!-- ajax4.js -->
+    <h1 class=" text-center text-5xl font-thin mt-4">AJAX 4~5<br>AJAX & PHP Forms & MySQL<br>Fetch from PHP MySQL</h1>
+    
+    <h1 class=" text-center text-3xl font-thin mt-4">PHP Get Form</h1>
+    <div class=" grid grid-cols-12 mt-2 mb-2 m-3">
+        <!-- Basic PHP form Submission -->
+        <form action="./php/process.php" method="GET" class="col-start-4 col-span-6 grid grid-cols-6 gap-1">
+            <span class="cols-start-1 col-span-1 shadow-xl font-thin bg-white text-center rounded">Name:</span>
+            <input class="col-start-2 col-span-4 shadow-xl pl-2" type="text" name="name" placeholder="Full Name">
+            <input class="col-start-6 col-span-1 shadow-xl font-thin text-white bg-teal-600 rounded hover:bg-teal-500" type="submit" value="Submit">
+        </form>
+    </div>
+
+    <h1 class=" text-center text-3xl font-thin mt-4">AJAX Get Form</h1>
+    <div class=" grid grid-cols-12 mt-2 mb-2 m-3">
+        <!-- Basic AJAX form Submission -->
+        <form id="getForm" class="col-start-4 col-span-6 grid grid-cols-6 gap-1">
+            <span class="cols-start-1 col-span-1 shadow-xl font-thin bg-white text-center rounded">Name:</span>
+            <input class="col-start-2 col-span-4 shadow-xl pl-2" type="text" name="name" id="name1" placeholder="Full Name">
+            <input class="col-start-6 col-span-1 shadow-xl font-thin text-white bg-teal-600 rounded hover:bg-teal-500" type="submit" value="Submit">
+        </form>
+    </div>
+
+    <h1 class=" text-center text-3xl font-thin mt-4">PHP Get Form</h1>
+    <div class=" grid grid-cols-12 mt-2 mb-2 m-3">
+        <!-- Basic PHP form Submission -->
+        <form action="./php/process.php" method="POST" class="col-start-4 col-span-6 grid grid-cols-6 gap-1">
+            <span class="cols-start-1 col-span-1 shadow-xl font-thin bg-white text-center rounded">Name:</span>
+            <input class="col-start-2 col-span-4 shadow-xl pl-2" type="text" name="name" placeholder="Full Name">
+            <input class="col-start-6 col-span-1 shadow-xl font-thin text-white bg-teal-600 rounded hover:bg-teal-500" type="submit" value="Submit">
+        </form>
+    </div>
+
+    <h1 class=" text-center text-3xl font-thin mt-4">AJAX POST Form</h1>
+    <div class=" grid grid-cols-12 mt-2 mb-2 m-3">
+        <!-- Basic AJAX form Submission -->
+        <form id="postForm" class="col-start-4 col-span-6 grid grid-cols-6 gap-1">
+            <span class="cols-start-1 col-span-1 shadow-xl font-thin bg-white text-center rounded">Name:</span>
+            <input class="col-start-2 col-span-4 shadow-xl pl-2" type="text" name="name" id="name2" placeholder="Full Name">
+            <input class="col-start-6 col-span-1 shadow-xl font-thin text-white bg-teal-600 rounded hover:bg-teal-500" type="submit" value="Submit">
+        </form>
+    </div>
+    <div class=" grid grid-cols-12 mt-6">
+        <button id='phpSQLBtn' class="col-start-1 sm:col-start-3 md:col-start-4 lg:col-start-5 xl:col-start-5
+                                      col-span-12 sm:col-span-8 md:col-span-6 lg:col-span-4 xl:col-span-4 
+                                      shadow-2xl m-2 p-2 rounded 
+                                      text-white bg-teal-600 justify-items-center
+                                      hover:bg-teal-500"
+                                      >Get Users > Data Base</button>
+    </div>
+    <h1 id="output" class=" text-center text-3xl font-thin">SQL -> PHP -> AJAX -> HTML Output</h1>
+    <script src="./js/ajax4_5.js"></script>
+</body>
+</html>

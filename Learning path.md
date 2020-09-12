@@ -360,7 +360,228 @@ xhttp.send();
 3. Superagent ++
 4. Fetch API ++
 5. Prototype
-6. Node HTTP 
+6. Node HTTP
+
+#### HTTP STATUS
+1. 200: "OK"
+2. 403: "Forbidden"
+3. 404: "Not Found"
+
+#### readyState Value
+0. request not initialized
+1. server connection established
+2. request received
+3. processing request
+4. request finished and response is ready
+
+#### onload vs onreadystatechange
+1. onload has to be on readyState value of 4 to work.
+2. Where as onreadystatechange goes through all readyStates till it reaches 4.
+
+#### OPTIONAL - used for loaders
+-   xhr.onprogress
+
+## MySQL Crash Course | Learn SQL
+### https://www.youtube.com/watch?v=9ylj9NR0Lcg
+
+#### What is MYSQL?
+1. Open source relational database managment system
+2. Uses the SQL (Structured Query Language)
+3. A leading database for web applications
+4. Used for small apps to large enterprise apps
+5. Used with multiple languages (PHP, Node, Python, C#)
+6. Cross Platform
+
+#### Relational Database
+1. Based on "relational model" of data
+2. Virtually all RDBMS use SQL to manage them
+3. Uses "tables" with "columns" and "rows"
+4. Tables can realte to eachother by keys
+
+#### Common Data Types
+1. Numeric INT, TINYINT, BIGINT, FLOAT
+2. String  VARCHAR, TEXT, CHAR
+3. Date    DATE, DATETIME, TIMESTAMP
+4. Others  BINARY, JSON
+
+#### Create New User 
+> CREATE USER 'user_name'@'localhost' IDENTIFIED BY 'user_password'
+
+#### See All Users
+> SELECT user, host FROM mysql.user
+
+#### Set User Privlages
+> GRANT ALL PRIVILEGES ON * . * TO 'user_name'@'localhost';
+> FLUSH PRIVILEGES
+> SHOW GRANTS FOR 'user_name'@'localhost'
+
+#### Log in as new user
+> mysql -u user_name -p
+
+#### Create DataBase
+> CREATE DATABASE db_name;
+
+#### Specify DataBase to be used
+> USE db_name
+
+#### Create Table
+> Create Table table_name(
+    > id INT AUTO_INCREMENT, 
+    > first_name VARCHAR(100),
+    > last_name VARCHAR(100),
+    > email VARCHAR(75),
+    > password VARCHAR(255),
+    > location VARCHAR(100),
+    > dept VARCHAR(75),
+    > is_admin TINYINT(1),
+    > register_date DATETIME,
+    > PRIMARY KEY(id)
+    > );
+
+#### Show tables
+> SHOW TABLES:
+
+#### Delete Table or DB 
+> DROP TABLE table_name;
+> DROP DATABASE db_name;
+> DROP INDEX index_name on table_name;
+
+#### Insert data into Table
+1. Insert 1 user 
+> INSERT INTO users(first_name,last_name,email,password,location,dept,is_admin,register_date) value ('first_name','last_name','email','password','location','dept','is_admin','register_date', now());
+
+2. Insert Multiple 
+> INSERT INTO users(first_name,last_name,email,password,location,dept,is_admin,register_date) value ('first_name','last_name','email','password','location','dept','is_admin','register_date', now()), ('first_name','last_name','email','password','location','dept','is_admin','register_date', now());
+
+#### Selecting Data in Table
+1. Select All Data in Table
+> SELECT * FROM user;
+2. Select Specific Columns
+> SELECT first_name, last_name FROM users;
+3. Select All with Where 
+    (condition1 AND/OR/(>, <, <=, >=, =) condition2/value)
+> SELECT * FROM users WHERE dept='Gaming';
+> SELECT * FROM users WHERE is_admin > 0;
+
+#### Delete Row
+> DELETE FROM users WHERE id = num;
+
+#### Update info
+> UPDATE users SET email = 'freddy@gmail.com' WHERE id = num;
+
+#### Insert Col
+> ALTER TABLE users ADD col_name Datatype(length);
+
+#### Modify Col
+> ALTER TABLE users MODIFY COLUMN age Datatype(length);
+
+#### Order
+> SELECT * FROM users ORDER BY last_name ASC/DESC;
+
+#### Concat
+> SELECT CONCAT(first_name,'',last_name) AS 'Name', dept FROM users;
+
+#### ROWS element with no repeat
+> SELECT DISTINCT location From users;
+
+#### Ranges
+> SELECT * FROM users WHERE age BETWEEN 20 AND 30;
+
+#### Search 
+> SELECT * FROM users WHERE dept LIKE 'G%';
+> SELECT * FROM users WHERE dept NOT LIKE %es%;
+> SELECT * FROM users WHERE dept IN('design','sales');
+
+#### Create and Index
+> CREATE INDEX index_name on users(location);
+
+#### Realtional DB
+1. Creating a new table link table with another table using foreign key
+> CREATE TABLE posts(
+    > id INT AUTO_INCREMENT,
+    > user_id INT,
+    > title VARCHAR(100),
+    > body TEXT,
+    > publish_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    > PRIMARY KEY(id),
+    > FOREIGN KEY(user_id) REFERENCES users(id)    
+>);
+
+2. Inser new_table data
+> INSERT INTO posts(user_id, title, body)VALUES
+> (1, 'Post One', 'This is post one'),
+> (1, 'Post Two', 'This is post two'),
+> (2, 'Post Three', 'This is post three'),
+> (1, 'Post Four', 'This is post four'),
+> (3, 'Post Five', 'This is post five'),
+> (3, 'Post Six', 'This is post six'),
+> (3, 'Post Seven', 'This is post seven'),
+> (2, 'Post Eight', 'This is post eight'),
+> (6, 'Post Nine', 'This is post nine'),
+> (5, 'Post Ten', 'This is post ten');
+
+3. Join Tables
+> SELECT
+> users.first_name,
+> users.last_name,
+> posts.title,
+> posts.publish_date
+> FROM users
+> INNER JOIN posts
+> ON users.id = posts.user_id
+> ORDER BY posts.title;
+
+4. Adding another table and inserting values
+> CREATE TABLE comment(
+	> id INT AUTO_INCREMENT,
+    > post_id INT,
+    > users_id INT,
+    > body TEXT,
+    > publish_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    > PRIMARY KEY(id),
+    > FOREIGN KEY(post_id) REFERENCES posts(id),
+    > FOREIGN KEY (user_id) REFERENCES users(id)
+> );
+
+5. Query different tables
+> SELECT
+> comment.body,
+> posts.title
+> FROM comment
+> LEFT JOIN posts /LEFT/ taking comment as base /RIGHT/ taking posts as base
+> ON posts.id = comment.post_id
+> ORDER BY Posts.title;
+
+> SELECT
+> comment.body,
+> posts.title,
+> users.first_name,
+> users.last_name
+> FROM comment
+> INNER JOIN posts ON posts.id = comment.post_id
+> INNER JOIN users ON users.id = comment.user_id
+> ORDER BY posts.title;
+
+6. Aggregate Function
+    1. COUNT(identifier)
+        > SELECT COUNT(id) FROM users
+    
+    2. MAX(identifier) or MIN(identifier)
+        > SELECT MAX(age) FROM users
+        > SELECT MIN(age) FROM users
+    
+    3. SUM(Datatype int)
+        > SELECT SUM(age) FROM users
+    
+    4. UCASE(STRING) LCASE(string)
+        > SELECT UCASE(first_name), LCASE(last_name) FROM users
+
+    5. GROUP BY
+        > SELECT location, COUNT(location) FROM users GROUP BY location;
+        > SELECT location, COUNT(location) FROM users WHERE location = 'US' GROUP BY location; 
+
+
+## PHP
 
 ## Fetch API Introduction
 ###
