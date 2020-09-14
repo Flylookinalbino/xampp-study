@@ -10,14 +10,42 @@
 <body class="bg-gray-300">
     <div class="container m-auto">
         <h1 class="text-center text-3xl text-white font-thin bg-teal-700 rounded shadow-2xl">Fetch API SandBox</h1>
+        
+        <!-- Fetch from Local File -->
         <div class="grid grid-cols-12 text-2xl font-thin bg-white rounded m-2 shadow-2xl">
-            <h1 class="col-start-2 col-span-5 text-center m-2 p-1 ">Get Text From Text File -> </h1>
-            <button id="getFile" class="col-start-9 col-span-2 rounded bg-teal-700 hover:bg-teal-600 text-white m-3 font-thin">Click</button>
+            <h1 class="col-start-2 col-span-5 m-2 p-1 ">Get Text From Text File -> </h1>
+            <button id="getFile" class="col-start-8 col-span-4 rounded bg-blue-600 hover:bg-blue-500 text-white m-3 font-thin shadow-lg">Local Text File</button>
         </div>
+        
+        <!-- Fetch from Local JSON -->
         <div class="grid grid-cols-12 text-2xl font-thin bg-white rounded m-2 shadow-2xl">
-            <h1 class="col-start-2 col-span-5 text-center m-2 p-1 ">Get Users From JSON File -> </h1>
-            <button id="getJSON" class="col-start-9 col-span-2 rounded bg-teal-700 hover:bg-teal-600 text-white m-3 font-thin">Click</button>
+            <h1 class="col-start-2 col-span-5 m-2 p-1 ">Get Users From JSON File -> </h1>
+            <button id="getJSON" class="col-start-8 col-span-4 rounded bg-blue-600 hover:bg-blue-500 text-white m-3 font-thin shadow-lg">Local JSON File</button>
         </div>
+
+        <!-- FORM POST REQUEST -->
+        <div class="text-xl font-thin bg-white rounded m-4 shadow-2xl">
+            <form id="form" class="grid grid-cols-12 gap-1">
+                <legend class="col-start-1 col-span-2 m-3 p-1">POST REQUEST</legend>
+                <input type="title" id="title" placeholder="Title" class="border m-3 p-1 col-span-4 rounded shadow-md">
+                <textarea id="body" placeholder="body" class="border m-3 p-1 col-span-4 rounded shadow-md"></textarea>
+                <input type="submit" class=" col-span-2 text-sm bg-green-500 hover:bg-green-400 text-white rounded m-3 shadow-md" value="Submit">
+            </form>
+        </div>
+        
+        <!-- Fetch from External JSON -->
+        <div class="grid grid-cols-12 text-2xl font-thin bg-white rounded m-2 shadow-2xl">
+            <h1 class="col-start-2 col-span-5 m-2 p-1 ">Get Users From JSON API -> </h1>
+            <button id="getEXJSON" class="col-start-8 col-span-4 rounded bg-red-800 hover:bg-red-700 text-white m-3 font-thin shadow-lg">External JSON</button>
+        </div>
+        
+        <!-- Fetch from MySQL -->
+        <div class="grid grid-cols-12 text-2xl font-thin bg-white rounded m-2 shadow-2xl">
+            <h1 class="col-start-2 col-span-5 m-2 p-1 ">Get Users From MySQL -> </h1>
+            <button id="getEXDB" class="col-start-8 col-span-4 rounded bg-red-800 hover:bg-red-700 text-white m-3 font-thin shadow-lg">External MySQL</button>
+        </div>
+
+        <!-- Output Section -->
         <div class=" bg-white rounded m-2 shadow-2xl">
             <h1 id="fileOutput" class="m-2 p-3 font-thin text-2xl border-b text-center">OutPut</h1>
         </div>
