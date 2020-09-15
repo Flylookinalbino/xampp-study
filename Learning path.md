@@ -584,8 +584,47 @@
 ## Fetch API Introduction
 ### https://www.youtube.com/watch?v=Oive66jrwBs&list=PLillGF-RfqbbnEGy3ROiLWk7JMCuSyQtX&index=13
 
+### https://www.youtube.com/watch?v=HwMivpgciNU
+
 ## JavaScript EA6 / ES2015 Tutuorials
-###
+### https://www.youtube.com/playlist?list=PLillGF-RfqbZ7s3t6ZInY3NjEOOX7hsBv
+
+#### Whats New? An Overview
+1. let and const Declarations
+2. Destructuring Assignments
+3. Classes and Inheritance
+4. Tamplate String
+5. String Features
+6. Math & Number Features
+7. New Data Structures
+8. Iterators
+9. Generators
+10. Promises & Asynchronous Data
+11. Arrow Functions
+
+#### Install Babel Trans
+1. Need Node.js installed
+2. npm install babel-cli babel-preset-es2015 --save-dev
+3. Create .babelrc file 
+4. Paste in .babelrc
+>{
+>   "presets":[
+        "es2015"
+>   ]
+>}
+5. Save that and close file
+6. Create src folder and a file called main.js
+7. Create dist folder and a file called script.js
+8. Go to package.json => inside "scripts":{}
+> "build:js": "babel src/main.js -o dist/script.js"
+8. Create another script section and inside "scripts":{}
+> "build:js": "babel --presets es2015 src/main.js -o dist/script.js"
+9. Edit src/main.js
+10. Terminal
+> npm run build:js
+11. Check dist/script.js and see the es2015 converted js
+
+
 
 ## PHP
 ### https://www.youtube.com/playlist?list=PLillGF-Rfqbap2IB6ZS4BBBcYPagAjpjn
