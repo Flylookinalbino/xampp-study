@@ -1,28 +1,35 @@
 <?php
+// Grab The Form Data
+$title = $_POST['title'];
+$body = $_POST['body'];
 
-echo 'POST: Title '.$_POST['title'];
-echo 'POST: Body '.$_POST['body'];
+echo $title;
+echo "\n";
+echo $body;
+echo "\n";
 
-// Connection
-// $conn = mysqli_connect('localhost','FlyDB','fly2020SQL!','Fetch_API');
+// Commection to MySQL DB
+$conn = mysqli_connect("localhost", "FlyDB", "fly2020SQL!", "Fetch_API");
 
-// if(isset($_POST['title']) && isset($_POST['body'])){
-//     $title = mysqli_real_escape_string($conn,$_POST['title']);
-//     $body = mysqli_real_escape_string($conn, $POST['body']);
+if($conn){
+    echo "Connected to DB";
+}else{
+    echo "Not Connected to DB";
+}
+echo "\n";
+// // Query
+// $query = ;
 
-//     echo 'Post: Your Title is '.$_POST['title'];
-//     echo 'Post: Your Body is '.$_POST['body'];
+// echo $query;
+echo "\n";
+// Insert into Database table
+$sql = mysqli_query($conn,"INSERT INTO post_data (title, body) VALUES ('$title','$body')");
 
-    
-    
+// Return response log
+if($sql){
+    echo "Success";
+}else{
+    echo "Failed";
+}
 
-//     // $query = "INSERT INTO users(name) VALUES('$name')";
-
-//     // if(mysqli_query($conn, $query)){
-//     //     echo ' User Added....';
-//     // }else{
-//     //     echo ' ERROR: '.mysqli_error($conn);
-//     // }
-// }
-
-// mysqli_close($conn);
+mysqli_close($conn);

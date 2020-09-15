@@ -10,5 +10,6 @@ $sql = mysqli_query($conn, $sql_query);
 // STORE DATA IN result VARIABLE
 $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
 
-exit(json_encode($result));
+mysqli_close($conn);
 
+exit(json_encode($result));
