@@ -589,6 +589,7 @@
 ## JavaScript EA6 / ES2015 Tutuorials
 ### https://www.youtube.com/playlist?list=PLillGF-RfqbZ7s3t6ZInY3NjEOOX7hsBv
 
+## JavaScript ES6/ES2015-[01]Introduction
 #### Whats New? An Overview
 1. let and const Declarations
 2. Destructuring Assignments
@@ -602,6 +603,7 @@
 10. Promises & Asynchronous Data
 11. Arrow Functions
 
+## JavaScript ES6/ES2015-[02]Compile ES6 With Babel
 #### Install Babel Compiler for ES6 to ES5
 1. Need Node.js installed
 2. npm install babel-cli babel-preset-es2015 --save-dev
@@ -624,6 +626,15 @@
 > npm run build:js
 11. Check dist/script.js and see the es2015 converted js
 
+## JavaScript ES6/ES2015-[03]Let and Const Declaration
+## JavaScript ES6/ES2015-[04]Classes and Inheritance
+## JavaScript ES6/ES2015-[05]Template Literals
+## JavaScript ES6/ES2015-[06]New String & Number Methods
+## JavaScript ES6/ES2015-[07]Default Params & Spread Operator
+## JavaScript ES6/ES2015-[08]Set,Map,WeakSet and WeakMap
+## JavaScript ES6/ES2015-[09]Arrow Functions
+## JavaScript ES6/ES2015-[10]Promises
+## JavaScript ES6/ES2015-[11]Generators
 
 
 ## PHP
