@@ -602,7 +602,7 @@
 10. Promises & Asynchronous Data
 11. Arrow Functions
 
-#### Install Babel Trans
+#### Install Babel Compiler for ES6 to ES5
 1. Need Node.js installed
 2. npm install babel-cli babel-preset-es2015 --save-dev
 3. Create .babelrc file 
