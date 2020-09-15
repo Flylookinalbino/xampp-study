@@ -1,6 +1,7 @@
 // Grab output
 var fileOutput = document.querySelector('#fileOutput');
-var form = document.querySelector('#form');
+// var form = document.querySelector('#form');
+var sqlFrom = document.querySelector('#sqlForm');
 
 // Grab button
 var getFile = document.querySelector('#getFile');
@@ -13,7 +14,8 @@ getFile.addEventListener('click', extractFile);
 getJSON.addEventListener('click', extractJSON);
 getEXJSON.addEventListener('click', extractJSONAPI);
 getEXDB.addEventListener('click', extractDB);
-form.addEventListener('submit', addJSON);
+// form.addEventListener('submit', addJSON);
+sqlFrom.addEventListener('submit', postSQL);
 
 // extractFile Function
 function extractFile() {
@@ -86,12 +88,18 @@ function extractJSONAPI(){
 // extractMYSQL
 function extractDB(){
     if(hideContent()){
-
+        fetch('./php/server.php')
+        .then((res) => res.json())
+        .then((data) => {
+            dbOutput(data);
+        })
+        .catch((error) => console.log(error));
     }else{
         fileOutput.nextElementSibling.style.display = 'none';
         console.log(fileOutput.nextElementSibling);
         fileOutput.innerHTML = 'OutPut';
     }
+   
 };
 
 // POST REQUEST
@@ -102,10 +110,6 @@ function addJSON(e){
     let body = document.querySelector('#body').value;
     fetch('https://jsonplaceholder.typicode.com/posts',{
         method:'POST',
-        headers:{
-            'Accept': 'application/json, text/plain, */*',
-            'Content-type':'application/json'
-        },
         body:JSON.stringify({title:title, body:body})
     })
     .then((res) => res.json())
@@ -113,6 +117,21 @@ function addJSON(e){
 
     console.log(title.value);
     console.log(body.value);
+};
+
+function postSQL(e) {
+    e.preventDefault();
+    var title = document.querySelector('#title').value;
+    var body = document.querySelector('#body').value;
+    console.log(title);
+    console.log(body);
+    fetch('./php/post.php', {
+        method:'POST',
+        body:JSON.stringify({title:title, body:body})
+    })
+    .then(res => { console.log(res.json()); return res.json();})
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
 };
 
 // Output Function
@@ -178,6 +197,38 @@ function jsonAPIOutput(data) {
         </div>
         <br><br>`;
     });
+};
+
+function dbOutput(data){
+    // Create Element
+    let output = document.createElement('div');
+    // Add Class to New Element
+    output.className = "";
+    // Add File Data
+    data.forEach((post) => {
+        output.innerHTML +=
+        `<div class="grid grid-cols-12 bg-white">
+            <h1 class="col-start-4 col-span-3 border rounded-tl-lg p-1 font-mono">Post ID:</h1>
+            <span class="col-span-3 border rounded-tr-lg p-1">${post.id}</span>
+        </div>
+        <div class="grid grid-cols-12 bg-white">
+            <h1 class="col-start-4 col-span-3 border p-1 font-mono">User ID:</h1>
+            <span class="col-span-3 border p-1">${post.user_id}</span>
+        </div>
+        <div class="grid grid-cols-12 bg-white">
+            <h1 class="col-start-4 col-span-3 border p-1 font-mono">Title:</h1>
+            <span class="col-span-3 border p-1">${post.title}</span>
+        </div>
+        <div class="grid grid-cols-12 bg-white">
+            <h1 class="col-start-4 col-span-3 border p-1 font-mono">Body:</h1>
+            <span class="col-span-3 border p-1">${post.body}</span>
+        </div>
+        <div class="grid grid-cols-12 bg-white">
+            <h1 class="col-start-4 col-span-3 border rounded-bl-lg shadow-xl p-1 font-mono">Publish Date & Time:</h1>
+            <span class="col-span-3 border rounded-br-lg shadow-xl p-1">${post.publish_date}</span>
+        </div>
+        <br><br>`;
+    });
     
     // Insert Element after Text Output h1
     fileOutput.insertAdjacentElement('afterend', output);
@@ -186,4 +237,4 @@ function jsonAPIOutput(data) {
 
 function hideContent(){
    return (fileOutput.nextSibling.nodeName == '#text' || fileOutput.nextElementSibling.style.display == 'none')? true:false;
-};
+}

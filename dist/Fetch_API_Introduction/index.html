@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./css/fontawesome.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <title>Fetch API SandBox</title>
 </head>
@@ -24,14 +23,14 @@
         </div>
 
         <!-- FORM POST REQUEST -->
-        <div class="text-xl font-thin bg-white rounded m-4 shadow-2xl">
+        <!-- <div class="text-xl font-thin bg-white rounded m-4 shadow-2xl">
             <form id="form" class="grid grid-cols-12 gap-1">
                 <legend class="col-start-1 col-span-2 m-3 p-1">POST REQUEST</legend>
                 <input type="title" id="title" placeholder="Title" class="border m-3 p-1 col-span-4 rounded shadow-md">
                 <textarea id="body" placeholder="body" class="border m-3 p-1 col-span-4 rounded shadow-md"></textarea>
                 <input type="submit" class=" col-span-2 text-sm bg-green-500 hover:bg-green-400 text-white rounded m-3 shadow-md" value="Submit">
             </form>
-        </div>
+        </div> -->
         
         <!-- Fetch from External JSON -->
         <div class="grid grid-cols-12 text-2xl font-thin bg-white rounded m-2 shadow-2xl">
@@ -43,6 +42,16 @@
         <div class="grid grid-cols-12 text-2xl font-thin bg-white rounded m-2 shadow-2xl">
             <h1 class="col-start-2 col-span-5 m-2 p-1 ">Get Users From MySQL -> </h1>
             <button id="getEXDB" class="col-start-8 col-span-4 rounded bg-red-800 hover:bg-red-700 text-white m-3 font-thin shadow-lg">External MySQL</button>
+        </div>
+
+        <!-- FORM POST REQUEST -->
+        <div class="text-xl font-thin bg-white rounded m-4 shadow-2xl">
+            <form id="sqlForm" class="grid grid-cols-12 gap-1">
+                <legend class="col-start-1 col-span-2 m-3 p-1">POST REQUEST</legend>
+                <input type="text" id="title" name="title" placeholder="Title" class="border m-3 p-1 col-span-4 rounded shadow-md">
+                <textarea id="body" name="body" placeholder="body" class="border m-3 p-1 col-span-4 rounded shadow-md"></textarea>
+                <input type="submit" class=" col-span-2 text-sm bg-green-500 hover:bg-green-400 text-white rounded m-3 shadow-md" value="Submit">
+            </form>
         </div>
 
         <!-- Output Section -->

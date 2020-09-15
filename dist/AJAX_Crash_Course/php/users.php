@@ -1,6 +1,6 @@
 <?php
 // Create Connection
-$conn = mysqli_connect('localhost','root','','ajaxtest');
+$conn = mysqli_connect('localhost','FlyDB','fly2020SQL!','ajaxtest');
 // Query Database
 $query = 'SELECT * FROM users';
 // Get Result

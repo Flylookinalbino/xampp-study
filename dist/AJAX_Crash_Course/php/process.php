@@ -1,7 +1,7 @@
 <?php
 
 // Connect to a MySQL DB
-$conn = mysqli_connect('localhost','root','','ajaxtest');
+$conn = mysqli_connect('localhost','FlyDB','fly2020SQL!','ajaxtest');
 
 echo 'Processing... ';
 
